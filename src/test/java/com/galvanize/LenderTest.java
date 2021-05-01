@@ -125,4 +125,16 @@ public class LenderTest {
         assertFalse(approvalStatus);
     }
 
+    @Test
+    public void testFundisPendingAfterAppovedLoan() {
+        //Act
+        availableFunds.set(350000);
+        newApplicant1.getQualification();
+        boolean approvedStatus = availableFunds.getApprovedStatus(newApplicant1);
+
+        //Assert
+        assertEquals(250000, availableFunds.getPendingFunds());
+        assertEquals(100000, availableFunds.showBalance());
+    }
+
 }
