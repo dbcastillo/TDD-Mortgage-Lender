@@ -7,6 +7,7 @@ public class ApplicantProfile {
     int savings;
     int loanAmount;
     boolean qualified;
+    boolean approved = false;
 
     public ApplicantProfile(int _requestedAmount,
                             int _dti,
@@ -18,10 +19,18 @@ public class ApplicantProfile {
         this.savings = _savings;
     }
 
+    public void setLoanAmount(int amount) {
+        this.loanAmount = amount;
+    }
+
+    public int getLoanAmount() {
+        return this.loanAmount;
+    }
+
     public boolean getQualification() {
         if(this.dti < 36 && this.creditScore > 620) {
             determineQualifiedStatus();
-        } else {
+        } else {  // denied
             qualified = false;
             loanAmount = 0;
         }
@@ -30,10 +39,11 @@ public class ApplicantProfile {
 
     private void determineQualifiedStatus() {
         if(savings >= (requestedAmount * 0.25)) {
-            loanAmount = requestedAmount;
+            this.setLoanAmount(this.requestedAmount);
             qualified = true;
+            this.approved = true;
         } else {
-            loanAmount = savings * 4;
+            this.setLoanAmount(savings * 4);
             qualified = true;
         }
     }

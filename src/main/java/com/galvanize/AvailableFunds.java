@@ -2,7 +2,7 @@ package com.galvanize;
 
 public class AvailableFunds {
     private  int funds;
-
+    private int pendingFunds;
 
     public int showBalance() {
         return funds;
@@ -16,13 +16,20 @@ public class AvailableFunds {
         this.funds = _funds;
     }
 
-    public int get() {
-        return this.funds;
+    public int getPendingFunds() {
+        return this.pendingFunds;
     }
 
     public boolean getApprovedStatus(ApplicantProfile applicationProfile) {
         if (this.showBalance() == 0)
             return false;
-        return applicationProfile.loanAmount <= this.showBalance();
+
+        if (applicationProfile.approved) {
+            this.pendingFunds = applicationProfile.loanAmount;
+            this.funds = this.funds - this.pendingFunds;
+            return applicationProfile.loanAmount <= this.showBalance();
+        }
+
+        return true;
     }
 }
