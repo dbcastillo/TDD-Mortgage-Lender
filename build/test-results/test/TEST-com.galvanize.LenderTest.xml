@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.galvanize.LenderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-01T21:19:01" hostname="LTUS136175" time="0.076">
+<testsuite name="com.galvanize.LenderTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-05-01T21:33:08" hostname="LTUS136175" time="0.095">
   <properties/>
-  <testcase name="testWhenLoanExpiresPendingAmountReturnedToAvailableFunds()" classname="com.galvanize.LenderTest" time="0.076"/>
+  <testcase name="testWhenLoanExpiresPendingAmountReturnedToAvailableFunds()" classname="com.galvanize.LenderTest" time="0.054"/>
+  <testcase name="testFundisPendingAfterAppovedLoan()" classname="com.galvanize.LenderTest" time="0.004"/>
+  <testcase name="testIfPendingAdjustedAfterLoanRejected()" classname="com.galvanize.LenderTest" time="0.002"/>
+  <testcase name="testTotalAmountEqualsDepositAmountPlusBalance()" classname="com.galvanize.LenderTest" time="0.001"/>
+  <testcase name="testLoanShouldBeDenied()" classname="com.galvanize.LenderTest" time="0.005"/>
+  <testcase name="testSeeIfApplicantIsQualified()" classname="com.galvanize.LenderTest" time="0.004"/>
+  <testcase name="testSeeIfApplicantIsNotQualified()" classname="com.galvanize.LenderTest" time="0.002"/>
+  <testcase name="testSeeLoanDetailsBasedOnStatus()" classname="com.galvanize.LenderTest" time="0.003"/>
+  <testcase name="testLoanShouldBeApproved()" classname="com.galvanize.LenderTest" time="0.002"/>
+  <testcase name="testMyFundsShowAvailableBalance()" classname="com.galvanize.LenderTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -27,10 +27,10 @@ public class ApplicantProfile {
         this.savings = _savings;
     }
 
-    public ArrayList<String> applicantProfileData() {
-        // we were out of time but were going to make this have applicant info
-        // we were going to use this for the last method to get loan details based on status
-    }
+//    public ArrayList<String> applicantProfileData() {
+//        // we were out of time but were going to make this have applicant info
+//        // we were going to use this for the last method to get loan details based on status
+//    }
 
     public void setEffectiveLoanDate(LocalDateTime date) {
         this.effectiveLoanDate = date;

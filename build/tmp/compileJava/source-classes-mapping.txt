@@ -1,4 +1,6 @@
-com/galvanize/ApplicantProfile.java
- com.galvanize.ApplicantProfile
 com/galvanize/AvailableFunds.java
  com.galvanize.AvailableFunds
+com/galvanize/ApplicationInfo.java
+ com.galvanize.ApplicationInfo
+com/galvanize/ApplicantProfile.java
+ com.galvanize.ApplicantProfile
