@@ -3,16 +3,11 @@ package com.galvanize;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LenderTest {
 
-
-    //As a lender, I want to be able to check my available funds,
-    //so that I know how much money I can offer for loans.
-
-    //When I check my available funds
-    //Then I should see how much funds I currently have
     AvailableFunds availableFunds;
 
     @BeforeEach
@@ -30,6 +25,27 @@ public class LenderTest {
 
         // Assert
         assertTrue(fundsAvailable > 0);
+        assertEquals(500000, fundsAvailable);
+    }
+
+    // As a lender, I want to add money to my available funds,
+    // so that I can offer loans to potential home buyers.
+
+    // Given I have <current_amount> available funds
+    // When I add <deposit_amount>
+    // Then my available funds should be <total>
+
+    @Test
+    public void testTotalAmountEqualsDepositAmountPlusBalance() {
+        // Arrange
+
+
+        // Act
+        int newDeposit = availableFunds.depositAmount(10000);
+
+        // Assert
+        assertEquals(510000, availableFunds.showBalance());
+
 
     }
 }

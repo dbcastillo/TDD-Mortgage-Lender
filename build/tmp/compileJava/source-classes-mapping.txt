@@ -1,4 +1,4 @@
-com/galvanize/AvailableFunds.java
- com.galvanize.AvailableFunds
 com/galvanize/Lender.java
  com.galvanize.Lender
+com/galvanize/AvailableFunds.java
+ com.galvanize.AvailableFunds

@@ -6,4 +6,8 @@ public class AvailableFunds {
     public int showBalance() {
         return funds;
     }
+
+    public int depositAmount(int value) {
+        return funds += value;
+    }
 }
