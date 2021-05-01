@@ -138,4 +138,13 @@ public class LenderTest {
         assertEquals(350000, availableFunds.showBalance());
     }
 
+    @Test
+    public void testSeeLoanDetailsBasedOnStatus() {
+        // Arrange
+
+        // Act
+
+        // Assert
+    }
+
 }

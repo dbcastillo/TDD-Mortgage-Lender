@@ -1,6 +1,7 @@
 package com.galvanize;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -14,6 +15,7 @@ public class ApplicantProfile {
     boolean approved = false;
     boolean expired = false;
     LocalDateTime effectiveLoanDate;
+    ArrayList<String> applicantInfo = new ArrayList<>();
 
     public ApplicantProfile(int _requestedAmount,
                             int _dti,
@@ -23,6 +25,11 @@ public class ApplicantProfile {
         this.dti = _dti;
         this.creditScore = _creditScore;
         this.savings = _savings;
+    }
+
+    public ArrayList<String> applicantProfileData() {
+        // we were out of time but were going to make this have applicant info
+        // we were going to use this for the last method to get loan details based on status
     }
 
     public void setEffectiveLoanDate(LocalDateTime date) {
