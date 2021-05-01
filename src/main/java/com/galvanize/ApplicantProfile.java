@@ -20,16 +20,20 @@ public class ApplicantProfile {
 
     public boolean getQualification() {
         if(this.dti < 36 && this.creditScore > 620) {
-            if(savings >= (requestedAmount * 0.25)) {
-                loanAmount = requestedAmount;
-                qualified = true;
-            } else {
-                loanAmount = savings * 4;
-                qualified = true;
-            }
+            determineQualifiedStatus();
         } else {
             qualified = false;
         }
         return qualified;
+    }
+
+    private void determineQualifiedStatus() {
+        if(savings >= (requestedAmount * 0.25)) {
+            loanAmount = requestedAmount;
+            qualified = true;
+        } else {
+            loanAmount = savings * 4;
+            qualified = true;
+        }
     }
 }

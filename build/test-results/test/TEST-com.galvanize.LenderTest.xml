@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.galvanize.LenderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-01T16:42:05" hostname="LTUS136175" time="0.058">
+<testsuite name="com.galvanize.LenderTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-05-01T16:47:16" hostname="LTUS136175" time="0.081">
   <properties/>
-  <testcase name="testSeeIfApplicantIsNotQualified()" classname="com.galvanize.LenderTest" time="0.058"/>
+  <testcase name="testTotalAmountEqualsDepositAmountPlusBalance()" classname="com.galvanize.LenderTest" time="0.061"/>
+  <testcase name="testSeeIfApplicantIsQualified()" classname="com.galvanize.LenderTest" time="0.005"/>
+  <testcase name="testSeeIfApplicantIsNotQualified()" classname="com.galvanize.LenderTest" time="0.006"/>
+  <testcase name="testMyFundsShowAvailableBalance()" classname="com.galvanize.LenderTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
