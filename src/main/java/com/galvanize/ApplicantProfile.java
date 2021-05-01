@@ -23,6 +23,7 @@ public class ApplicantProfile {
             determineQualifiedStatus();
         } else {
             qualified = false;
+            loanAmount = 0;
         }
         return qualified;
     }
