@@ -14,6 +14,7 @@ public class LenderTest {
     @BeforeEach
     void setUp() {
         availableFunds = new AvailableFunds();
+
         newApplicant1 = new ApplicantProfile(
                 250000,
                 21,
@@ -29,7 +30,7 @@ public class LenderTest {
     @Test
     public void testMyFundsShowAvailableBalance() {
         // Arrange
-
+        availableFunds.set(500000);
 
         // Act
          int fundsAvailable = availableFunds.showBalance();
@@ -42,7 +43,7 @@ public class LenderTest {
     @Test
     public void testTotalAmountEqualsDepositAmountPlusBalance() {
         // Arrange
-
+        availableFunds.set(500000);
 
         // Act
         int newDeposit = availableFunds.depositAmount(10000);
@@ -103,6 +104,25 @@ public class LenderTest {
         assertFalse(qualification);
 
 
+    }
+
+    @Test
+    public void testLoanShouldBeApproved() {
+        availableFunds.set(500000);
+        // Act
+        boolean approvalStatus = availableFunds.getApprovedStatus(newApplicant1);
+        //Assert
+        assertTrue(approvalStatus);
+    }
+
+    @Test
+    public void testLoanShouldBeDenied() {
+
+        // Act
+        availableFunds.set(0);
+        boolean approvalStatus = availableFunds.getApprovedStatus(newApplicant2);
+        //Assert
+        assertFalse(approvalStatus);
     }
 
 }
