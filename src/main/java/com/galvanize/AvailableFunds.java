@@ -24,7 +24,7 @@ public class AvailableFunds {
         if (this.showBalance() == 0)
             return false;
 
-        if (applicationProfile.approved) {
+        if (applicationProfile.approved && !applicationProfile.determinedExpiredStatus()) {
             this.pendingFunds = applicationProfile.loanAmount;
             this.funds = this.funds - this.pendingFunds;
             return applicationProfile.loanAmount <= this.showBalance();

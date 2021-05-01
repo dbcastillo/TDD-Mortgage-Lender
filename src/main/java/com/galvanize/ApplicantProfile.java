@@ -1,5 +1,9 @@
 package com.galvanize;
 
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
+
 public class ApplicantProfile {
     int requestedAmount;
     int dti;
@@ -8,6 +12,8 @@ public class ApplicantProfile {
     int loanAmount;
     boolean qualified;
     boolean approved = false;
+    boolean expired = false;
+    LocalDateTime effectiveLoanDate;
 
     public ApplicantProfile(int _requestedAmount,
                             int _dti,
@@ -17,6 +23,14 @@ public class ApplicantProfile {
         this.dti = _dti;
         this.creditScore = _creditScore;
         this.savings = _savings;
+    }
+
+    public void setEffectiveLoanDate(LocalDateTime date) {
+        this.effectiveLoanDate = date;
+    }
+
+    public LocalDateTime getEffectiveLoanDate(){
+        return effectiveLoanDate;
     }
 
     public void setLoanAmount(int amount) {
@@ -30,11 +44,19 @@ public class ApplicantProfile {
     public boolean getQualification() {
         if(this.dti < 36 && this.creditScore > 620) {
             determineQualifiedStatus();
+            determinedExpiredStatus();
         } else {  // denied
             qualified = false;
             loanAmount = 0;
         }
         return qualified;
+    }
+
+    public boolean determinedExpiredStatus() {
+        LocalDateTime currentDate = LocalDateTime.now();
+        LocalDateTime expirationDate = effectiveLoanDate.plusDays(3);
+        currentDate.isAfter(expirationDate);
+        return expired = currentDate.isAfter(expirationDate);
     }
 
     private void determineQualifiedStatus() {
@@ -46,5 +68,6 @@ public class ApplicantProfile {
             this.setLoanAmount(savings * 4);
             qualified = true;
         }
+        effectiveLoanDate = LocalDateTime.now();
     }
 }
