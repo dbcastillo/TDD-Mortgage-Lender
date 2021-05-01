@@ -137,4 +137,14 @@ public class LenderTest {
         assertEquals(100000, availableFunds.showBalance());
     }
 
+    @Test
+    public  void testIfPendingAdjustedAfterLoanRejected() {
+        availableFunds.set(350000);
+        newApplicant1.getQualification();
+        boolean approvedStatus = availableFunds.getApprovedStatus(newApplicant2);
+
+        //Assert
+        assertEquals(350000, availableFunds.showBalance());
+    }
+
 }
